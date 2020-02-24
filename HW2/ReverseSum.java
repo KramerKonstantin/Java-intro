@@ -11,18 +11,17 @@ public class ReverseSum {
             String line = input.nextLine();
             linesCount++;
 
+            ArrayList<Integer> integers = new ArrayList<Integer>();
+
             if (line.length() > 0) {
                 String[] numbers = line.split("\\p{javaWhitespace}");
 
-                ArrayList<Integer> integers = new ArrayList<Integer>();
                 for (String number : numbers) {
                     integers.add(Integer.parseInt(number));
                 }
-
-                matrix.add(integers);
-            } else {
-                matrix.add(new ArrayList<Integer>());
             }
+
+            matrix.add(integers);
         }
 
         for (int i = 0; i < linesCount; i++) {
@@ -30,7 +29,7 @@ public class ReverseSum {
 
             for (int j = 0; j < matrixSize; j++) {
                 int sum = 0;
-                
+
                 for (int t = 0; t < matrixSize; t++) {
                     sum += matrix.get(i).get(t);
                 }
