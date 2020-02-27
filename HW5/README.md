@@ -13,20 +13,22 @@
    3. сильно выделенный текст окружается символами '__';
    4. зачеркнутый текст окружается символами '~'.
 6. Следующий код должен успешно компилироваться:
-   > Paragraph paragraph = new Paragraph(List.of(  
-   > 	new Strong(List.of(  
-   > 		new Text("1"),  
-   > 		new Strikeout(List.of(  
-   > 			new Text("2"),  
-   > 			new Emphasis(List.of(  
-   > 				new Text("3"),  
-   > 				new Text("4")  
-   > 			)),  
-   > 			new Text("5")  
-   > 		)),  
-   > 		new Text("6")  
-   > 	))  
-   > ));  
+```java
+   Paragraph paragraph = new Paragraph(List.of(  
+   	new Strong(List.of(  
+   		new Text("1"),  
+   		new Strikeout(List.of(  
+   			new Text("2"),  
+   			new Emphasis(List.of(  
+   				new Text("3"),  
+   				new Text("4")  
+   			)),  
+   			new Text("5")  
+   		)),  
+   		new Text("6")  
+   	))  
+   ));  
+```
 
 Вызов paragraph.toMakdown(new StringBuilder()) должен заполнять переданный StringBuilder следующим содержимым: 
    > __1~2*34*5~6__  
